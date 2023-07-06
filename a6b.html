@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+    <button id="click">click me</button>
+    <p id="hover">hover me</p>
+
+    <input typr="text" id="input" placeholder="input any value">
+    <input typr="text" id="key" placeholder="press any key">
+    <script>
+        const btn = document.getElementById("click");
+        btn.addEventListener("click",()=>{
+            alert("clicked");
+        })
+
+        const hover=document.getElementById("hover");
+        hover.addEventListener("mouseover",()=>{
+            hover.style.color="yellow";
+        })
+        hover.addEventListener("mouseout",()=>{
+            hover.style.color="black";
+        })
+
+        const input = document.getElementById("input");
+        input.addEventListener("change",(event)=>
+        {   
+            alert(event.target.value);
+        })
+
+        const key = document.getElementById("key");
+        key.addEventListener("keydown",(event)=>{
+            alert(event.key);
+        })
+    </script>
+</body>
+
+</html>
